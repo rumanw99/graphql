@@ -141,7 +141,7 @@ const Login: React.FC = () => {
 
                 <Box
                     component={'img'}
-                    src="public/images/Frame.png"
+                    src="/static/images/Frame.png"
                     height={'30%'}
                     position={'absolute'}
                     left={'60%'}
@@ -150,7 +150,7 @@ const Login: React.FC = () => {
                 ></Box>
                 <Box
                     component={'img'}
-                    src="public/images/Frame1.png"
+                    src="/static/images/Frame1.png"
                     height={'30%'}
                     position={'absolute'}
                     left={'15%'}
