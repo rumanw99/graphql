@@ -131,7 +131,7 @@ const LoginForm: React.FC<{
                     variant="contained"
                     color="primary"
                 >
-                    Login
+                    Sign in
                 </Button>
                 <Typography height="20px" textAlign="center">
                     <Typography
