@@ -41,9 +41,10 @@ const LoginForm: React.FC<{
                     sx={{
                         color: '#121212',
                         fontSize: 32,
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Poppins-SemiBold, sans-serif',
                         fontWeight: '700',
                         wordWrap: 'break-word',
+                        
                     }}
                 >
                     Welcome to Socialha 👋🏼
@@ -54,7 +55,7 @@ const LoginForm: React.FC<{
                         mt: 3,
                         color: '#121212',
                         fontSize: 20,
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Poppins-SemiBold, sans-serif',
                         fontWeight: '400',
                         wordWrap: 'break-word',
                     }}
