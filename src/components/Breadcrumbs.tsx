@@ -15,7 +15,7 @@ const breadcrumbButtonStyles = {
 const Breadcrumbs = ({ items }: { items: Array<Breadcrumb> }) => {
     return (
         <MuiBreadcrumbs
-            separator="›"
+           
             aria-label="breadcrumb"
             separator={<NavigateNextIcon fontSize="small" />}
         >
