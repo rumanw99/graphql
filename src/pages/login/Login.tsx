@@ -145,7 +145,7 @@ const Login: React.FC = () => {
                     height={'30%'}
                     position={'absolute'}
                     left={'60%'}
-                    top={'28%'}
+                    top={'30%'}
                     zIndex={99}
                 ></Box>
                 <Box

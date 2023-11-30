@@ -112,7 +112,7 @@ const LoginForm: React.FC<{
                 >
                     <FormControlLabel
                         label="Remeber me"
-                        control={<Checkbox />}
+                        control={<Checkbox  />}
                     />
                     <Button
                         variant="text"
