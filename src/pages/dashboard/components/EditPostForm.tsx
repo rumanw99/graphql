@@ -24,6 +24,11 @@ interface FormValues {
     body: string;
 }
 
+
+interface UpdatePostResponse {
+    updatePost: Post;
+  }
+
 const validationSchema = Yup.object({
     title: Yup.string().required('Title is required'),
     body: Yup.string().required('Body is required'),
@@ -42,32 +47,32 @@ const EditPostForm: React.FC<EditPostFormProps> = ({
 
     const handleSubmit = async (values: FormValues) => {
         try {
-            const mutation = `
-        mutation UpdatePost($id: ID!, $title: String!, $body: String!) {
-          updatePost(id: $id, input: { title: $title, body: $body }) {
-            id
-            title
-            body
-          }
-        }
-      `;
-
-            const variables = {
-                id: post?.id,
-                title: values.title,
-                body: values.body,
-            };
-
-            const data = await graphQLClient.request(mutation, variables);
-
-            console.log('Updated post:', data.updatePost);
-            onClose(); 
-            onUpdatePost({ title: values.title, body: values.body });
+          const mutation = `
+            mutation UpdatePost($id: ID!, $title: String!, $body: String!) {
+              updatePost(id: $id, input: { title: $title, body: $body }) {
+                id
+                title
+                body
+              }
+            }
+          `;
+    
+          const variables = {
+            id: post?.id,
+            title: values.title,
+            body: values.body,
+          };
+    
+          const data = await graphQLClient.request<UpdatePostResponse>(mutation, variables);
+    
+          console.log('Updated post:', data.updatePost);
+          onClose();
+          onUpdatePost({ title: values.title, body: values.body });
         } catch (error) {
-            console.error('Error updating post:', error);
-            // Handle error, e.g., display an error message to the user
+          console.error('Error updating post:', error);
+          // Handle error, e.g., display an error message to the user
         }
-    };
+      };
 
     const formik = useFormik({
         initialValues,
